@@ -2,7 +2,7 @@ from flask import Flask, request, make_response, redirect, render_template
 
 app = Flask(__name__)
 
-todos = ['todos 1', 'todos 2', 'todos 3']
+todos = ['comprar', 'seleccionar', 'carrito']
 
 
 
