@@ -2,6 +2,9 @@ from flask import Flask, request, make_response, redirect, render_template
 
 app = Flask(__name__)
 
+todos = ['todos 1', 'todos 2', 'todos 3']
+
+
 
 @app.route("/")
 def index():
@@ -13,7 +16,11 @@ def index():
 @app.route("/hello")
 def hello():
     user_id = request.cookies.get("user_id")
-    return render_template("hello.html", user_id = user_id)
+    contex = {
+        'user_id' : user_id,
+        'todos' : todos
+    }
+    return render_template("hello.html", **contex)
 
 
 if __name__ == "__main__":
